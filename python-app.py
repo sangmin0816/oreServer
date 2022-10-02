@@ -33,5 +33,4 @@ def infer(x):
     return result
 
 #APP RUNSERVER
-if __name__ == "__main__":
-    app.run()
+app.run()
