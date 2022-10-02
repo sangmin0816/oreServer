@@ -8,8 +8,8 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipe
 import torch
 import numpy as np
 
-tokenizer = AutoTokenizer.from_pretrained("sgunderscore/hatescore-korean-hate-speech")
-model = AutoModelForSequenceClassification.from_pretrained("sgunderscore/hatescore-korean-hate-speech")
+tokenizer = AutoTokenizer.from_pretrained("./hatescore-korean-hate-speech")
+model = AutoModelForSequenceClassification.from_pretrained("./hatescore-korean-hate-speech")
 
 app = flask.Flask(__name__) 
 cors = CORS(app)
