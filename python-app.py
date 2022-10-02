@@ -14,7 +14,7 @@ model = AutoModelForSequenceClassification.from_pretrained("./hatescore-korean-h
 app = flask.Flask(__name__) 
 cors = CORS(app)
 
-@app.route("/")
+@app.route("/home")
 def home():
     return "Flask API get endpoint running"
 
