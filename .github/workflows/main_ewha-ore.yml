@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'ewha-ore'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C75548533E9846A590D1D01F2102D7FD }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_187F51FF03724C48B61CE9574A95161B }}
