@@ -16,7 +16,7 @@ cors = CORS(app)
 
 @app.route("/home")
 def home():
-    return "Flask API get endpoint running"
+    return "<h1>Hello Azure!</h1>"
 
 @app.route('/analyze', methods=['POST'])
 def analyze_context():
