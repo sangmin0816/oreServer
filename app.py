@@ -20,7 +20,7 @@ def home():
 
 @app.route('/analyze', methods=['POST'])
 def analyze_context():
-    article = request.get_json()
+    article = request.form.get('analyze')
     print(article)
     result = infer(article)
     return jsonify(result)
