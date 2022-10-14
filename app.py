@@ -14,7 +14,7 @@ model = AutoModelForSequenceClassification.from_pretrained("sgunderscore/hatesco
 app = flask.Flask(__name__) 
 cors = CORS(app)
 
-@app.route("/home")
+@app.route('/')
 def home():
     return "<h1>Hello Azure!</h1>"
 
