@@ -15,8 +15,9 @@ app = flask.Flask(__name__)
 cors = CORS(app)
 
 @app.route('/')
-def home():
-    return "<h1>Hello Azure!</h1>"
+def index():
+   print('Request for index page received')
+   return render_template('index.html')
 
 @app.route('/analyze', methods=['POST'])
 def analyze_context():
