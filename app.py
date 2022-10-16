@@ -8,19 +8,19 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipe
 import torch
 import numpy as np
 
-tokenizer = AutoTokenizer.from_pretrained("./hatescore-korean-hate-speech")
-model = AutoModelForSequenceClassification.from_pretrained("./hatescore-korean-hate-speech")
+tokenizer = AutoTokenizer.from_pretrained("sgunderscore/hatescore-korean-hate-speech")
+model = AutoModelForSequenceClassification.from_pretrained("sgunderscore/hatescore-korean-hate-speech")
 
 app = flask.Flask(__name__) 
 cors = CORS(app)
 
-@app.route("/home")
+@app.route('/')
 def home():
-    return "Flask API get endpoint running"
+    return "<h1>Hello Azure!</h1>"
 
 @app.route('/analyze', methods=['POST'])
 def analyze_context():
-    article = request.get_json()
+    article = request.form.get('analyze')
     print(article)
     result = infer(article)
     return jsonify(result)
