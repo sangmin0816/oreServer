@@ -14,7 +14,7 @@ def index():
 
 @app.route('/analyze', methods=['POST'])
 def analyze_context():
-    article = request.form.get('analyze')
+    article = request.get_json()
     print(article)
     res = requests.post("http://43.155.168.76:5000/analyze", data=article)
     return res.text
