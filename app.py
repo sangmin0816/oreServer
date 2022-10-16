@@ -16,7 +16,7 @@ def index():
 def analyze_context():
     article = request.form.get('analyze')
     print(article)
-    res = requests.post("http://43.155.168.76:5000/analyze", data=json.dumps(article))
+    res = requests.post("http://43.155.168.76:5000/analyze", data=article)
     return res.text
 
 #APP RUNSERVER
