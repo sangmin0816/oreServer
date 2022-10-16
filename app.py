@@ -4,13 +4,6 @@ from flask_cors import CORS
 import json
 from urllib.parse import unquote
 
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
-import torch
-import numpy as np
-
-tokenizer = AutoTokenizer.from_pretrained("sgunderscore/hatescore-korean-hate-speech")
-model = AutoModelForSequenceClassification.from_pretrained("sgunderscore/hatescore-korean-hate-speech")
-
 app = flask.Flask(__name__) 
 cors = CORS(app)
 
@@ -23,15 +16,8 @@ def index():
 def analyze_context():
     article = request.form.get('analyze')
     print(article)
-    result = infer(article)
-    return jsonify(result)
-
-def infer(x):
-    classifier = pipeline("text-classification", model=model, tokenizer=tokenizer)
-    result = classifier(x)
-    result = result[0]['label']
-    print(result)
-    return result
+    res = requests.post("http://43.155.168.76:5000/analyze", data=json.dumps(article))
+    return res.text
 
 #APP RUNSERVER
 app.run()
